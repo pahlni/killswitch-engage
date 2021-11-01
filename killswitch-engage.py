@@ -16,5 +16,7 @@ while (True):
     time.sleep(0.03)
     value = button_in.read()
     if value == False:
+        os.system('killall dbus-daemon')
         led_out.write(False)
+        time.sleep(3)
         os.system('reboot')
